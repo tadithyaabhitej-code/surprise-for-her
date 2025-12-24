@@ -1,0 +1,128 @@
+# surprise-for-her
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For You 😏</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 25px;
+      border-radius: 22px;
+      max-width: 360px;
+      text-align: center;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+      animation: pop 1s ease;
+      z-index: 2;
+    }
+
+    @keyframes pop {
+      from { transform: scale(0.7); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    h1 {
+      color: #ff4d6d;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 15px;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .emoji {
+      font-size: 26px;
+      animation: bounce 1.4s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-7px); }
+    }
+
+    .heart {
+      position: absolute;
+      color: #ff4d6d;
+      font-size: 18px;
+      animation: floatUp 6s linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(100vh); opacity: 0; }
+      10% { opacity: 1; }
+      100% { transform: translateY(-10vh); opacity: 0; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h1>Hey you 😏✨</h1>
+
+    <p class="emoji">💖💫</p>
+
+    <p>
+      So… you actually scanned this.<br>
+      Not surprised — curiosity looks really good on you 😌
+    </p>
+
+    <p class="emoji">❤️</p>
+
+    <p>
+      You’re my favorite notification,<br>
+      my sweetest distraction,<br>
+      and the best part of my year 💫
+    </p>
+
+    <p class="emoji">😊😉</p>
+
+    <p>
+      New year, same me —<br>
+      still flirting with you,<br>
+      still choosing you ❤️
+    </p>
+
+    <p class="emoji">😏🔥</p>
+
+    <p>
+      Now don’t pretend you’re not smiling…<br>
+      I already won 😉
+    </p>
+  </div>
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (3 + Math.random() * 4) + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 7000);
+    }
+
+    setInterval(createHeart, 350);
+  </script>
+
+</body>
+                        </html>
